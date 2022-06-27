@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Button</title>
+</head>
+
+<body>
+  <button class="shadowbutton"> <span>Acender</span> </button>
+  <style>
+    button {
+      display: block;
+      margin: 20em 40em;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    span {
+      font-size: x-large;
+    }
+
+    .shadowbutton {
+      width: 7.5rem;
+      height: 3.75rem;
+      border: 2px solid #162fef;
+      border-radius: 0.625rem;
+      background-color: transparent;
+      color: rgb(8, 103, 185);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .shadowbutton:hover {
+      background-color: rgb(177, 177, 177);
+      color: rgb(3, 146, 190);
+      transition: 1s ease;
+    }
+
+    .shadowbutton::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3.125rem;
+      background: transparent;
+      height: 50%;
+      width: 100%;
+      transform: perspective(0.20rem) rotateX(20deg) scale(1, 0.25);
+      filter: blur(0.5rem);
+      transition: 1s ease;
+    }
+
+    .shadowbutton:hover::before {
+      background: rgb(255, 255, 254);
+      top: 4.375rem;
+    }
+  </style>
+  </button>
+</body>
+
+</html>
